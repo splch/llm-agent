@@ -3,7 +3,7 @@
 Recursive sub-agents for [`llm`](https://llm.datasette.io). Any model can spawn any other model.
 
 ```sh
-llm -m X -T agent --td "…"
+llm -m X -T agent --td --sf AGENTS.md "…"
 ```
 
 ## Install
