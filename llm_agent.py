@@ -1,5 +1,9 @@
 import subprocess
+from pathlib import Path
 import llm
+
+
+AGENTS_MD = Path(__file__).parent / "AGENTS.md"
 
 
 @llm.hookimpl
@@ -15,6 +19,8 @@ def register_tools(register):
           system: optional role/persona for the sub-agent
         """
         cmd = ["llm", "-m", model, "-T", "agent", "--td"]
+        if AGENTS_MD.exists():
+            cmd += ["--sf", str(AGENTS_MD)]
         if system:
             cmd += ["-s", system]
         cmd.append(prompt)
