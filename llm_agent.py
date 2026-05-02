@@ -18,5 +18,5 @@ def register_tools(register):
         if system:
             cmd += ["-s", system]
         cmd.append(prompt)
-        r = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)
+        r = subprocess.run(cmd, capture_output=True, text=True)
         return r.stdout.strip() if r.returncode == 0 else f"[err] {r.stderr.strip()}"

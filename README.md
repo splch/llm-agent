@@ -6,8 +6,6 @@ Recursive sub-agents for [`llm`](https://llm.datasette.io). Any model can spawn 
 llm -m X -T agent --td "…"
 ```
 
-That's the whole interface.
-
 ## Install
 
 ```sh
@@ -32,13 +30,7 @@ parent (X)
 
 ## Routing
 
-`AGENTS.md` (also symlinked as `CLAUDE.md` and `GEMINI.md`) is the routing manual every agent reads. It tracks benchmark data for LLMs to optimally call LLMs.
-
-## Files
-
-- `llm_agent.py` — the plugin (~15 lines)
-- `pyproject.toml` — entry point
-- `AGENTS.md` / `CLAUDE.md` / `GEMINI.md` — sub-agent routing guide
+`AGENTS.md` (symlinked as `CLAUDE.md` and `GEMINI.md`) is the routing manual every agent reads. It tracks benchmark data for LLMs to optimally call LLMs.
 
 ## License
 
