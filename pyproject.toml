@@ -1,0 +1,11 @@
+[project]
+name = "llm-agent"
+version = "0.1"
+requires-python = ">=3.10"
+dependencies = ["llm"]
+
+[project.entry-points.llm]
+agent = "llm_agent"
+
+[dependency-groups]
+dev = ["pre-commit", "ruff", "ty"]
