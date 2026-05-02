@@ -6,21 +6,21 @@ You have the `agent(model, prompt, system="")` tool. Use it to delegate work to 
 
 ## Which task for which model
 
-- **Knowledge:** `google/gemini-3.1-pro-preview`, fallback: `openai/gpt-5.5`
-- **Reasoning:** `openai/gpt-5.5` (xhigh), `anthropic/claude-opus-4.7`
-- **Math:** `openai/gpt-5.5` (xhigh), `openai/gpt-5.4-pro`, fallback: `deepseek/deepseek-v4-pro`
-- **Coding (single-turn):** `google/gemini-3-pro-preview`, `google/gemini-3-flash-preview`
-- **Coding (repo / SWE):** `anthropic/claude-opus-4.7`, fallback: `anthropic/claude-sonnet-4.6`, `openai/gpt-5.4` (xhigh)
-- **Agentic/tool:** `anthropic/claude-opus-4.7`, `z-ai/glm-5`, fallback: `moonshotai/kimi-k2.6`.
-- **Browser/OS:** `anthropic/claude-opus-4.7`, fallback: `anthropic/claude-sonnet-4.6`
-- **Long-context:** `google/gemini-3.1-pro-preview`, `openai/gpt-5.2-codex` (xhigh), fallback: `google/gemini-3-flash-preview`
-- **Multimodal (image):** `google/gemini-3.1-pro-preview`, fallback: `google/gemini-3-flash-preview`.
-- **Multimodal (video):** `google/gemini-3-pro`, fallback: `google/gemini-3-flash-preview`
-- **Multilingual:** `google/gemini-3.1-pro-preview`
-- **Instruction following:** `x-ai/grok-4.3`, fallback: `x-ai/grok-4.20-multi-agent`
-- **Factuality:** `google/gemini-3.1-pro-preview`
-- **Safety:** `anthropic/claude-opus-4.7`, `anthropic/claude-sonnet-4.6`
-- **Reliability/propensity:** `google/gemini-3.1-pro-preview`, `anthropic/claude-opus-4.7`
+- **Knowledge:** `openrouter/google/gemini-3.1-pro-preview`, fallback: `openrouter/openai/gpt-5.5`
+- **Reasoning:** `openrouter/openai/gpt-5.5` (xhigh), `openrouter/anthropic/claude-opus-4.7`
+- **Math:** `openrouter/openai/gpt-5.5` (xhigh), `openrouter/openai/gpt-5.4-pro`, fallback: `openrouter/deepseek/deepseek-v4-pro`
+- **Coding (single-turn):** `openrouter/google/gemini-3.1-pro-preview`, `openrouter/google/gemini-3-flash-preview`
+- **Coding (repo / SWE):** `openrouter/anthropic/claude-opus-4.7`, fallback: `openrouter/anthropic/claude-sonnet-4.6`, `openrouter/openai/gpt-5.4` (xhigh)
+- **Agentic/tool:** `openrouter/anthropic/claude-opus-4.7`, `openrouter/z-ai/glm-5`, fallback: `openrouter/moonshotai/kimi-k2.6`.
+- **Browser/OS:** `openrouter/anthropic/claude-opus-4.7`, fallback: `openrouter/anthropic/claude-sonnet-4.6`
+- **Long-context:** `openrouter/google/gemini-3.1-pro-preview`, `openrouter/openai/gpt-5.2-codex` (xhigh), fallback: `openrouter/google/gemini-3-flash-preview`
+- **Multimodal (image):** `openrouter/google/gemini-3.1-pro-preview`, fallback: `openrouter/google/gemini-3-flash-preview`.
+- **Multimodal (video):** `openrouter/google/gemini-3.1-pro-preview`, fallback: `openrouter/google/gemini-3-flash-preview`
+- **Multilingual:** `openrouter/google/gemini-3.1-pro-preview`
+- **Instruction following:** `openrouter/x-ai/grok-4.3`, fallback: `openrouter/x-ai/grok-4.20-multi-agent`
+- **Factuality:** `openrouter/google/gemini-3.1-pro-preview`
+- **Safety:** `openrouter/anthropic/claude-opus-4.7`, `openrouter/anthropic/claude-sonnet-4.6`
+- **Reliability/propensity:** `openrouter/google/gemini-3.1-pro-preview`, `openrouter/anthropic/claude-opus-4.7`
 
 ## Sources
 
