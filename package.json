@@ -1,0 +1,39 @@
+{
+  "name": "pi-expert-subagent",
+  "version": "0.1.0",
+  "description": "Pi extension that delegates tasks to expert sub-agents, picking the best OpenRouter model per capability axis with automatic fallback.",
+  "type": "module",
+  "main": "index.ts",
+  "files": [
+    "index.ts",
+    "routing.ts",
+    "skills/**/*.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": ["./index.ts"],
+    "skills": ["./skills"]
+  },
+  "keywords": [
+    "pi",
+    "pi-package",
+    "subagent",
+    "openrouter",
+    "delegation",
+    "routing"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test --experimental-strip-types"
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*"
+  },
+  "peerDependenciesMeta": {
+    "@mariozechner/pi-coding-agent": { "optional": true }
+  }
+}
