@@ -1,6 +1,6 @@
 # pi-expert-subagent
 
-Pi extension that delegates tasks to expert sub-agents, automatically routing each task to the best OpenRouter model for the capability axis. Ships with a companion skill that teaches the parent agent how to classify tasks before delegating.
+Pi extension that delegates self-contained sub-tasks to an `expert` subagent running on the best OpenRouter model for the chosen capability axis. Ships a companion `expert-routing` skill that teaches the parent agent how to classify tasks before delegating.
 
 ## Install
 
@@ -9,36 +9,28 @@ pi install npm:pi-expert-subagent          # global
 pi install npm:pi-expert-subagent -l       # project-local
 ```
 
-Set `OPENROUTER_API_KEY` in your environment, or run `/login` and pick OpenRouter.
+Set `OPENROUTER_API_KEY` in the environment, or run `/login` and pick OpenRouter.
 
-## What it does
+## Tool params
 
-The extension exposes an `expert` tool and an `expert-routing` skill. The subagent runs in an isolated `pi -p` process with a focused system prompt and a tool subset chosen for the axis.
-
-### Tool params
-
-| Param | Type | Notes |
-|---|---|---|
-| `task_type` | enum | One of the axes defined in [`routing.ts`](./routing.ts) |
-| `task` | string | Self-contained brief — the subagent does not see your conversation |
-| `model` | string (optional) | Bypasses the fallback chain |
-| `thinking` | enum (optional) | `off`, `minimal`, `low`, `medium`, `high`, `xhigh` |
+- `task_type` — capability axis (see [`routing.ts`](./routing.ts) and the `expert-routing` skill)
+- `task` — self-contained brief; the subagent does not see your conversation
+- `model` *(optional)* — bypass the axis fallback chain
+- `thinking` *(optional)* — `off`, `minimal`, `low`, `medium`, `high`, `xhigh`
 
 ## Routing
 
-See [`routing.ts`](./routing.ts) for the per-axis model list, fallback order, system prompts, and tool subsets. All models go through OpenRouter; fallback engages on non-zero exit or empty stdout.
+[`routing.ts`](./routing.ts) holds per-axis model lists, fallback order, system prompts, and tool subsets. Fallback engages on non-zero exit or empty stdout.
 
 ## Recursion
 
-The extension propagates `PI_SUBAGENT_DEPTH` and refuses to delegate when `PI_SUBAGENT_DEPTH >= PI_SUBAGENT_MAX_DEPTH`. Set both to override; the default cap is small.
+Depth is propagated via `PI_SUBAGENT_DEPTH` and capped by `PI_SUBAGENT_MAX_DEPTH` (default `3`).
 
 ## Develop
 
 ```bash
-pi -e .                  # load the local checkout in a pi session
-npm test                 # validate the routing config (Node 22+)
+pi -e .            # load the local checkout in a pi session
+npm test           # validate the routing config (Node 22+)
 ```
 
-## License
-
-MIT
+MIT.
